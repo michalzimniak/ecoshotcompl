@@ -79,5 +79,86 @@
         "sesje_okolicznosciowe_8.jpg": "Okolicznosciowe",
         "sesje_okolicznosciowe_9.jpg": "Okolicznosciowe",
         "zwierzeta_1.jpg": "Zwierzęta"
+    },
+    "rules": {
+        "Artystyczne": [
+            "artystycz",
+            "art",
+            "fineart",
+            "creative"
+        ],
+        "Biznes": [
+            "biznes",
+            "biznesowe",
+            "business",
+            "linkedin",
+            "wizerunk",
+            "wizer",
+            "headshot",
+            "cv",
+            "corporate",
+            "branding",
+            "personal_brand"
+        ],
+        "Kobiece": [
+            "kobiec",
+            "sesje_kobiece",
+            "women",
+            "woman",
+            "female",
+            "boudoir"
+        ],
+        "Krajobraz": [
+            "krajobraz",
+            "landscape"
+        ],
+        "Okolicznosciowe": [
+            "okolicznosciowe",
+            "sesje_okolicznosciowe",
+            "okolicznosciow",
+            "okolicznościow",
+            "komun",
+            "komunia",
+            "communion",
+            "chrzest",
+            "slub",
+            "ślub",
+            "wesele"
+        ],
+        "Portret": [
+            "portret",
+            "portrait"
+        ],
+        "Rodzina": [
+            "rodzin",
+            "rodzinne",
+            "family",
+            "dzieci",
+            "kids",
+            "mama",
+            "tata",
+            "plener",
+            "dom"
+        ],
+        "Samochody": [
+            "samochod",
+            "samochody",
+            "auto",
+            "car",
+            "cars",
+            "motoryz",
+            "moto"
+        ],
+        "Zwierzęta": [
+            "zwier",
+            "zwierze",
+            "zwierzę",
+            "zwierzeta",
+            "pies",
+            "kot",
+            "pet",
+            "dog",
+            "cat"
+        ]
     }
 }

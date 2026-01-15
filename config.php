@@ -50,7 +50,7 @@ return [
             'host' => env('SMTP_HOST', 'zimniak-tech.pl'),
             'port' => (int)env('SMTP_PORT', '587'),
             'user' => env('SMTP_USER', 'formularz@ecoshot.com.pl'),
-            'pass' => env('SMTP_PASS', 'by?605Gf4'),
+            'pass' => env('SMTP_PASS', 'f89P3g9^i'),
             // tls|ssl|none
             'secure' => strtolower(env('SMTP_SECURE', 'tls')),
 
@@ -59,5 +59,15 @@ return [
             'to_email' => env('SMTP_TO_EMAIL', 'danuta@ecoshot.com.pl'),
             'to_name' => env('SMTP_TO_NAME', 'Danuta Zimniak'),
         ],
+    ],
+
+    // Panel administracyjny: /panel/
+    // Zalecane: ustaw 'password_hash' (hash z password_hash('TwojeHaslo', PASSWORD_DEFAULT))
+    // Alternatywnie: możesz ustawić 'password' (plaintext) – działa, ale mniej bezpieczne.
+    'panel' => [
+        'username' => 'danka',
+        'password_hash' => '',
+        'password' => 'adoa2223abz',
+        'max_upload_mb' => 20,
     ],
 ];

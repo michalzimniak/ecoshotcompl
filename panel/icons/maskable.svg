@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="EcoShot Panel (maskable)">
+  <!-- Maskable: wypełnia całe pole, bez zaokrągleń na krawędziach -->
+  <rect x="0" y="0" width="512" height="512" fill="#0d6efd"/>
+  <circle cx="256" cy="256" r="142" fill="rgba(255,255,255,0.18)"/>
+  <circle cx="256" cy="256" r="100" fill="#ffffff"/>
+  <circle cx="256" cy="256" r="52" fill="#0d6efd"/>
+  <rect x="148" y="136" width="216" height="52" rx="26" fill="#ffffff" opacity="0.9"/>
+</svg>

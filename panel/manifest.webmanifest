@@ -1,0 +1,24 @@
+{
+  "name": "EcoShot – Panel Portfolio",
+  "short_name": "Panel",
+  "start_url": "/panel/",
+  "scope": "/panel/",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#0d6efd",
+  "description": "Panel zarządzania portfolio EcoShot.",
+  "icons": [
+    {
+      "src": "/panel/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/panel/icons/maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
