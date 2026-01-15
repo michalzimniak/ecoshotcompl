@@ -8,7 +8,7 @@ panel_require_login();
 
 $allowed = (array)($config['portfolio']['allowed_categories'] ?? []);
 $defaultFromConfig = (string)($config['portfolio']['default_category'] ?? '');
-$categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio/categories.json'));
+$categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio_media/categories.json'));
 
 if (!in_array($defaultFromConfig, $allowed, true) && $allowed !== []) {
     $defaultFromConfig = (string)($allowed[0] ?? '');

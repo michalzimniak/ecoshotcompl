@@ -4,10 +4,10 @@ declare(strict_types=1);
 $config = require __DIR__ . '/config.php';
 
 $siteName = (string)($config['site']['brand'] ?? 'EcoShot');
-$allowedCategories = (array)($config['portfolio']['allowed_categories'] ?? ['Rodzina', 'Kobiece', 'Biznes', 'Okolicznosciowe', 'Samochody', 'Portret', 'Krajobraz', 'Artystyczne', 'Zwierzęta']);
+$allowedCategories = (array)($config['portfolio']['allowed_categories'] ?? ['Rodzina', 'Kobiece', 'Biznes', 'Okolicznosciowe', 'Samochody', 'Sport', 'Produktowe', 'Portret', 'Krajobraz', 'Artystyczne', 'Zwierzęta']);
 $defaultCategory = (string)($config['portfolio']['default_category'] ?? 'Rodzina');
 
-$categoriesConfigPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/portfolio/categories.json'));
+$categoriesConfigPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/portfolio_media/categories.json'));
 $categoryMap = [];
 
 if (is_file($categoriesConfigPath)) {
@@ -31,8 +31,8 @@ if (is_file($categoriesConfigPath)) {
     }
 }
 
-$portfolioGlob = (string)($config['portfolio']['files_glob'] ?? (__DIR__ . '/portfolio/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}'));
-$portfolioUrlPrefix = (string)($config['portfolio']['url_prefix'] ?? '/portfolio/');
+$portfolioGlob = (string)($config['portfolio']['files_glob'] ?? (__DIR__ . '/portfolio_media/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}'));
+$portfolioUrlPrefix = (string)($config['portfolio']['url_prefix'] ?? '/portfolio_media/');
 $portfolioFiles = glob($portfolioGlob, GLOB_BRACE) ?: [];
 
 // Sort newest first if possible (fallback: name)
@@ -434,17 +434,18 @@ function categoryFor(string $fileBaseName, array $categoryMap, string $defaultCa
       <div class="row g-2 g-md-3" id="portfolioGrid">
         <?php if (count($portfolioFiles) === 0): ?>
           <div class="col-12">
-            <div class="alert alert-warning mb-0">Brak zdjęć w folderze <strong>/portfolio/</strong>.</div>
+            <div class="alert alert-warning mb-0">Brak zdjęć w folderze <strong>/portfolio_media/</strong>.</div>
           </div>
         <?php else: ?>
           <?php foreach ($portfolioFiles as $filePath):
               $base = basename($filePath);
               $category = categoryFor($base, $categoryMap, $defaultCategory);
                 $url = $portfolioUrlPrefix . rawurlencode($base);
+              $wmUrl = '/portfolio-watermark.php?f=' . rawurlencode($base);
               $title = $category . ' – ' . preg_replace('/\.[^.]+$/', '', $base);
           ?>
             <div class="col-6 col-md-4 col-lg-3 portfolio-item" data-category="<?= esc($category) ?>">
-              <a href="<?= esc($url) ?>" class="portfolio-link glightbox" data-gallery="portfolio" data-title="<?= esc($title) ?>">
+              <a href="<?= esc($wmUrl) ?>" class="portfolio-link glightbox" data-gallery="portfolio" data-title="<?= esc($title) ?>">
                 <img src="<?= esc($url) ?>" class="img-fluid portfolio-img" alt="<?= esc($category) ?> – zdjęcie" loading="lazy">
                 <span class="portfolio-badge"><?= esc($category) ?></span>
               </a>

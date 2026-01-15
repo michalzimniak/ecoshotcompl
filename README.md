@@ -51,9 +51,9 @@ Uwaga: sekrety (hasła) nie powinny być trzymane na stałe w repo — w praktyc
 
 ## Portfolio
 
-Zdjęcia trzymane są w katalogu `portfolio/` (pliki `.jpg/.jpeg/.png/.webp`).
+Zdjęcia trzymane są w katalogu `portfolio_media/` (pliki `.jpg/.jpeg/.png/.webp`).
 
-Kategorie są mapowane w `portfolio/categories.json`:
+Kategorie są mapowane w `portfolio_media/categories.json`:
 
 - `default` — domyślna kategoria dla zdjęć bez przypisania
 - `map` — mapowanie `nazwa_pliku.jpg` → `Kategoria`
@@ -64,7 +64,7 @@ Dodatkowo:
 
 ### Aktualizacja kategorii (heurystyki)
 
-Jest skrypt, który skanuje `portfolio/` i aktualizuje `portfolio/categories.json`:
+Jest skrypt, który skanuje `portfolio_media/` i aktualizuje `portfolio_media/categories.json`:
 
 ```bash
 php scripts/update_portfolio_categories.php
@@ -81,7 +81,7 @@ Skrypt próbuje automatycznie przypisać kategorie m.in. na podstawie:
 - `contact.php` — API formularza kontaktowego (JSON)
 - `router.php` — router dla `php -S` (SPA)
 - `assets/` — CSS/JS i pliki statyczne
-- `portfolio/` — zdjęcia oraz `categories.json`
+- `portfolio_media/` — zdjęcia oraz `categories.json`
 - `scripts/` — skrypty pomocnicze
 
 ## Licencja

@@ -37,12 +37,12 @@ return [
     ],
 
     'portfolio' => [
-        'allowed_categories' => ['Rodzina', 'Kobiece', 'Biznes', 'Okolicznosciowe', 'Samochody', 'Portret', 'Krajobraz', 'Artystyczne', 'Zwierzęta'],
+        'allowed_categories' => ['Rodzina', 'Kobiece', 'Biznes', 'Okolicznosciowe', 'Samochody', 'Sport', 'Produktowe', 'Portret', 'Krajobraz', 'Artystyczne', 'Zwierzęta'],
         'default_category' => 'Rodzina',
         'max_images' => 72,
-        'categories_config_path' => __DIR__ . '/portfolio/categories.json',
-        'files_glob' => __DIR__ . '/portfolio/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
-        'url_prefix' => '/portfolio/',
+        'categories_config_path' => __DIR__ . '/portfolio_media/categories.json',
+        'files_glob' => __DIR__ . '/portfolio_media/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+        'url_prefix' => '/portfolio_media/',
     ],
 
     'mail' => [

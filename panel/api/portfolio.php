@@ -11,7 +11,7 @@ $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 if ($method === 'GET') {
     $allowed = (array)($config['portfolio']['allowed_categories'] ?? []);
     $defaultFromConfig = (string)($config['portfolio']['default_category'] ?? '');
-    $categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio/categories.json'));
+    $categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio_media/categories.json'));
     if (!in_array($defaultFromConfig, $allowed, true) && $allowed !== []) {
         $defaultFromConfig = (string)($allowed[0] ?? '');
     }
@@ -66,7 +66,7 @@ if ($action === 'delete') {
     // Usuń ewentualne mapowanie kategorii i przelicz heurystyki
     $allowed = (array)($config['portfolio']['allowed_categories'] ?? []);
     $defaultFromConfig = (string)($config['portfolio']['default_category'] ?? '');
-    $categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio/categories.json'));
+    $categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio_media/categories.json'));
     if (!in_array($defaultFromConfig, $allowed, true) && $allowed !== []) {
         $defaultFromConfig = (string)($allowed[0] ?? '');
     }
@@ -116,7 +116,7 @@ if ($action === 'rename') {
     // Przenieś mapowanie kategorii (jeśli istniało) + przelicz heurystyki
     $allowed = (array)($config['portfolio']['allowed_categories'] ?? []);
     $defaultFromConfig = (string)($config['portfolio']['default_category'] ?? '');
-    $categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio/categories.json'));
+    $categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio_media/categories.json'));
     if (!in_array($defaultFromConfig, $allowed, true) && $allowed !== []) {
         $defaultFromConfig = (string)($allowed[0] ?? '');
     }
@@ -151,7 +151,7 @@ if ($action === 'set_category') {
 
     $allowed = (array)($config['portfolio']['allowed_categories'] ?? []);
     $defaultFromConfig = (string)($config['portfolio']['default_category'] ?? '');
-    $categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio/categories.json'));
+    $categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio_media/categories.json'));
     if (!in_array($defaultFromConfig, $allowed, true) && $allowed !== []) {
         $defaultFromConfig = (string)($allowed[0] ?? '');
     }

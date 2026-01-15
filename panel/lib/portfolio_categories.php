@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-// Wspólne funkcje do zarządzania portfolio/categories.json.
+// Wspólne funkcje do zarządzania portfolio_media/categories.json.
 // Używane przez panel oraz opcjonalnie przez skrypty CLI.
 
 if (!function_exists('portfolio_str_contains')) {
@@ -26,7 +26,7 @@ if (!function_exists('portfolio_strtolower')) {
 
 /**
  * Domyślne reguły przypisywania kategorii po nazwie pliku.
- * Panel może je nadpisać zapisując "rules" w portfolio/categories.json.
+ * Panel może je nadpisać zapisując "rules" w portfolio_media/categories.json.
  *
  * @return array<string, array<int, string>>
  */
@@ -38,6 +38,8 @@ function portfolio_categories_default_rules(): array
         'Okolicznosciowe' => ['okolicznosciowe', 'sesje_okolicznosciowe', 'okolicznosciow', 'okolicznościow', 'komun', 'komunia', 'communion', 'chrzest', 'slub', 'ślub', 'wesele'],
         'Kobiece' => ['kobiec', 'sesje_kobiece', 'women', 'woman', 'female', 'boudoir'],
         'Samochody' => ['samochod', 'samochody', 'auto', 'car', 'cars', 'motoryz', 'moto'],
+        'Sport' => ['sport', 'sports', 'mecz', 'pilk', 'siatkowk', 'koszyk', 'bieg', 'runner', 'run', 'fitness', 'trening', 'gym', 'rower', 'cycling', 'bike'],
+        'Produktowe' => ['produkt', 'produktowe', 'product', 'produkty', 'packshot', 'pack-shot', 'ecommerce', 'e-commerce', 'sklep', 'shop', 'komercyjne', 'commercial', 'jedzenie', 'food', 'gastro', 'gastronomia', 'restaurac', 'restaurant', 'menu', 'kuchnia', 'kulinar', 'catering', 'potraw', 'danie', 'dessert', 'ciast', 'napoj', 'drink', 'coffee', 'kawa'],
         'Portret' => ['portret', 'portrait'],
         'Krajobraz' => ['krajobraz', 'landscape'],
         'Artystyczne' => ['artystycz', 'art', 'fineart', 'creative'],
@@ -190,15 +192,15 @@ function portfolio_detect_by_keywords(string $fileName, array $allowed, string $
 }
 
 /**
- * Główna funkcja: skanuje /portfolio i aktualizuje portfolio/categories.json.
+ * Główna funkcja: skanuje /portfolio_media i aktualizuje portfolio_media/categories.json.
  * Zwraca liczbę dopisanych/zmienionych wpisów.
  */
 function portfolio_update_categories(array $config): int
 {
     $allowed = (array)($config['portfolio']['allowed_categories'] ?? ['Rodzina']);
     $defaultCategory = (string)($config['portfolio']['default_category'] ?? 'Rodzina');
-    $categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio/categories.json'));
-    $glob = (string)($config['portfolio']['files_glob'] ?? (__DIR__ . '/../../portfolio/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}'));
+    $categoriesPath = (string)($config['portfolio']['categories_config_path'] ?? (__DIR__ . '/../../portfolio_media/categories.json'));
+    $glob = (string)($config['portfolio']['files_glob'] ?? (__DIR__ . '/../../portfolio_media/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}'));
 
     if (!in_array($defaultCategory, $allowed, true)) {
         $defaultCategory = (string)($allowed[0] ?? 'Rodzina');

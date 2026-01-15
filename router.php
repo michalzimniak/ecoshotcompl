@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 // Router dla wbudowanego serwera PHP (php -S ... router.php)
-// - serwuje istniejące pliki statyczne (assets/, portfolio/)
+// - serwuje istniejące pliki statyczne (assets/, portfolio_media/)
 // - pozostałe ścieżki (np. /oferta) kieruje do index.php (SPA)
 
 $path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);

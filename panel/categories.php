@@ -48,7 +48,7 @@ function h(string $v): string {
   </div>
 
   <div class="alert alert-info small">
-    Reguły są zapisywane w <code>portfolio/categories.json</code> w polu <code>rules</code>. “Przelicz” uruchamia heurystyki z <code>scripts/update_portfolio_categories.php</code>.
+    Reguły są zapisywane w <code>portfolio_media/categories.json</code> w polu <code>rules</code>. “Przelicz” uruchamia heurystyki z <code>scripts/update_portfolio_categories.php</code>.
   </div>
 
   <div class="row g-3">

@@ -114,9 +114,9 @@ function panel_portfolio_dir(array $config): string
 
 function panel_portfolio_url_prefix(array $config): string
 {
-    $prefix = (string)($config['portfolio']['url_prefix'] ?? '/portfolio/');
+    $prefix = (string)($config['portfolio']['url_prefix'] ?? '/portfolio_media/');
     if ($prefix === '') {
-        $prefix = '/portfolio/';
+        $prefix = '/portfolio_media/';
     }
     if (substr($prefix, -1) !== '/') {
         $prefix .= '/';
